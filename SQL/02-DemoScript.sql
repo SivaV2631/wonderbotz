@@ -92,6 +92,10 @@ GO
 	FROM [Orders]
 	WHERE ([OrderDate] BETWEEN '1996-JUL-05' AND '1996-JUL-10')
 	ORDER BY [OrderDate]
+ SELECT [OrderID], [OrderDate], [CustomerID]
+	FROM [Orders]
+	WHERE ([OrderDate] BETWEEN '1996-JULY-05' AND '1996-JULY-10')
+	ORDER BY [OrderDate]
 SELECT [OrderID], [OrderDate], [CustomerID]
 	FROM [Orders]
 	WHERE [OrderDate] BETWEEN '19960805' AND '19960810'
@@ -112,6 +116,9 @@ SELECT [OrderID], [OrderDate], [CustomerID]
 	 FROM [Suppliers]
  SELECT COUNT( ALL [Region] )
 	 FROM [Suppliers]
+
+ SELECT DISTINCT [Region] FROM [Suppliers]
+ SELECT DISTINCT [Region] FROM [Suppliers] WHERE [Region] is not null
  SELECT COUNT( DISTINCT [Region] )
 	 FROM [Suppliers]
  GO
@@ -124,10 +131,12 @@ SELECT [OrderID], [OrderDate], [CustomerID]
 /*
  *  Working with OFFSET and FETCH
  ******************************************************/
-
  SELECT [CustomerID], [CompanyName], [City], [Country]
 	FROM [Customers]
 	ORDER BY [Country], [City]
+ SELECT [CustomerID], [CompanyName], [City], [Country]
+	FROM [Customers]
+	ORDER BY [Country], 3
 
  --- Example #1: Skipping the first 3 rows
  SELECT [CustomerID], [CompanyName], [City], [Country]
@@ -152,7 +161,6 @@ SELECT [OrderID], [OrderDate], [CustomerID]
 		OFFSET 3 ROWS
 		FETCH FIRST 5 ROWS ONLY
  GO
-
 
 /*
  *  Understanding TOP clause
@@ -190,7 +198,7 @@ SELECT [OrderID], [OrderDate], [CustomerID]
  *  Ensures that all the items that satisfy the ORDER BY values are retrieved for the last match that qualifies
  ******************************************************/
 
- USE [MyDemoDb]
+ USE [WonderBotzDemo]
  GO
 
  IF OBJECT_ID('Products') IS NOT NULL
@@ -286,7 +294,7 @@ SELECT [OrderID], [OrderDate], [CustomerID]
  *  (d) Constraint - Default Constraint
  ******************************************************/
 
- USE [MyDemoDb]
+ USE [WonderBotzDemo]
  GO
 
  CREATE TABLE [Persons] (
@@ -346,12 +354,13 @@ SELECT [OrderID], [OrderDate], [CustomerID]
  ******************************************************/
 
  ---- Example #1
- DECLARE @counter int = 3
+ DECLARE @counter int = 4
  SELECT @counter AS [Counter]
 		, (CASE
 				WHEN @counter = 1 THEN 'One'
 				WHEN @counter = 2 THEN 'Two'
 				WHEN @counter = 3 THEN 'Three'
+				-- ELSE 'Not Found'
 		END) AS [In words]
  GO
 
@@ -387,10 +396,10 @@ SELECT [OrderID], [OrderDate], [CustomerID]
  GO 5
 
  DECLARE @counter int = 1
- ---BEGIN
- PRINT @counter
- SET @counter = @counter + 1
- ---END
+ BEGIN
+	 PRINT @counter
+	 SET @counter = @counter + 1
+ END
  GO 5
 
 
