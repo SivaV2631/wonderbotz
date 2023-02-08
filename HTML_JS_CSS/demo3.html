@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>My JavaScript Demo</title>
+		<script type="text/javascript" src="./demo3.js"></script>
+		<style>
+			p {
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>My JavaScript Demo</h1>
+
+		<p onclick="alert('hello from inline event-driven javascript code');"
+		   style="cursor: pointer;">
+			Click me to see a popup
+		</p>
+
+		<script>
+			// JavaScript block inside the HTML Document
+			alert('hello world');
+		</script>
+
+		<script type="text/javascript">
+			/* Another example of JavaScript block inside the HTML Document */
+			for(i = 1; i < 15; i++)
+			{
+				document.write('<p>another world</p>');
+			}
+		</script>
+	</body>
+</html>

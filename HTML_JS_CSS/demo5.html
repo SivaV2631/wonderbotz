@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DHTML Assignment</title>
+	<body>
+		<h1>DHTML Assignment</h1>
+
+		<p id="p1">300</p>
+
+		<button onClick="fClick()"> Click Me </button>
+
+		<script>
+			let i = parseInt( document.getElementById('p1').innerText );
+			console.log('value of i =' + i );
+			function fClick()
+			{
+				i++;
+				console.log('value of i changed to =' + i );
+				document.getElementById('p1').innerText = i;
+			}
+		</script>
+	</body>
+</html>

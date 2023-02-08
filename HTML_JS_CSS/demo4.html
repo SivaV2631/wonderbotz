@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DHTML document</title>
+		<style>
+			body, input, button
+			{
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>DHTML document</h1>
+
+		<p id="p1">Some paragraph</p>
+
+		<input type="button" value="Click <b>Me</b> also" onclick="fOne()" />
+
+		<button onclick="fTwo()">
+			Click <b>Me</b>
+		</button>
+
+		<script>
+			function fOne()
+			{
+				window.document.getElementById('p1').innerText = "changed <b>content</b>";
+			}
+
+			function fTwo()
+			{
+				document.getElementById('p1').innerHTML = "again <b>content</b>";
+			}
+		</script>
+
+	</body>
+</html>
