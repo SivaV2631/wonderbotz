@@ -1,0 +1,64 @@
+<!doctype HTML>
+<html>
+	<head>
+			<title>Example of JSON</title>
+			<style>
+				body {
+					font-family: Consolas, Arial;
+					font-size: 14pt;
+				}
+			</style>
+	</head>
+	<body>
+
+		<h1>Working with JSON</h1>
+
+		<p>Using Properties</p>
+		<p id='p1'></p>
+
+		<p>Using Indexer</p>
+		<p id='p2'></p>
+
+		<p>Extracting the properties using the FOR loop</p>
+		<p id='p3'></p>
+
+		<p>JSON.stringify</p>
+		<p id='p4'></p>
+
+		<p>JSON.parse</p>
+		<p id="p5"></p>
+
+
+		<script type="text/javascript">
+
+			var emp = {
+				"ID" : 10,
+				"Name" : 'First Employee'
+			};
+
+			window.document.getElementById('p1').innerHTML
+				= 'Name: ' + emp.Name + ', ID: ' + emp.ID;
+
+			document.getElementById('p2').innerHTML
+				= 'Name: ' + emp['Name'] + ', ID: ' + emp['ID'];
+
+			let txt = '';
+			for( let p in emp ) {
+				txt += p + ' = ' + emp[p] + '<br />'
+			}
+			document.getElementById('p3').innerHTML = txt;
+
+
+			let str = JSON.stringify(emp);
+			document.getElementById('p4').innerHTML = str;
+
+			// str = { "Greeting": "Hello world from JSON", "PublishDate" : "2022-01-28" };		// JSON OBJECT
+			str = '{ "Greeting": "Hello world from JSON", "PublishDate" : "2022-01-28" }';		    // stringified version of the JSON
+
+			let obj = JSON.parse(str);
+			document.getElementById('p5').innerHTML = obj.Greeting + ' dated ' + new Date(obj.PublishDate);
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,12 @@
+body
+{
+	background-color: #fdfcf7;
+}
+
+button span.material-icons {
+    vertical-align: middle;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 2px groove;
+}
+

@@ -1,0 +1,25 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Demo of DOM</title>
+	</head>
+	<body>
+		<h1>Demo of DOM (Document Object Model) - how DOM works</h1>
+
+		<script type="text/javascript">
+			/*  Try putting the two functions in a different order! */
+
+			function Demo(message, number) {
+				alert('Message: ' + message + ' number: '  + number );
+			}
+
+			function Demo(message) {
+				alert('Message: ' + message );
+			}
+
+			Demo('hello world');
+			Demo( 'another world', 10 );
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<title>Demo of Form Validation</title>
+		<style>
+			<!--
+				#Table1
+				{
+					border-top: 2px solid #AAAAAA;
+					border-left: 2px solid #AAAAAA;
+					border-bottom: 2px solid #AAAAAA;
+					border-right: 2px solid #AAAAAA;
+					font-family: Verdana, Arial;
+					font-size: 12pt;
+				}
+
+				#TableHeading
+				{
+					background-color: #FF0000;
+					color: #FFFF00;
+					font-weight: bold;
+				}
+
+				#btnSubmit, #btnReset
+				{
+					font-family: Verdana;
+					font-size: 12pt;
+					background-color: #800000;
+					color: #FFFFFF;
+				}
+
+				.err
+				{
+					color: #FF0000;
+					font-weight: bold;
+				}
+			-->
+		</style>
+		<script language="JavaScript" type="text/javascript">
+			<!--
+				function fCheckRequired( txtBox, errSpan )
+				{
+					let isValid = false;
+					if( txtBox.value == "" )
+					{
+						errSpan.innerText = "*";
+					}
+					else
+					{
+						errSpan.innerText = "";
+						isValid = true;
+					}
+					return isValid;
+				}
+
+				function fValidateAge()
+				{
+					var isValid = fCheckRequired( document.getElementById('txtAge'), document.getElementById('errAge') );
+					if( ! isValid )
+					{
+						errAge.innerText = "Age cannot be empty";
+					}
+					else
+					{
+						// var nAge = parseInt( document.getElementById('txtAge' ).value;
+
+						let nAge = parseInt(window.document.Form1.txtAge.value);
+						if( isNaN(nAge) )
+						{
+							errAge.innerText = "Age has to be a number.";
+							isValid = false;
+						}
+						else
+						{
+							if( nAge >= 18 && nAge <= 65 )
+							{
+								errAge.innerText = "";
+								isValid = true;
+							}
+							else
+							{
+								errAge.innerText = "Valid Age is between 18 and 65.";
+								isValid = false;
+							}
+						}
+					}
+					return isValid;
+				}
+
+				function fValidateName()
+				{
+					var isValid = fCheckRequired( window.document.Form1.txtName, document.getElementById('errName') );
+					return isValid;
+				}
+
+				function fValidateAll()
+				{
+					var isValidName, isValidAge;
+					isValidName = fValidateName();
+					isValidAge = fValidateAge();
+					return( isValidName && isValidAge );
+				}
+
+				function fClearAll()
+				{
+					errName.innerText = "";
+					errAge.innerText = "";
+				}
+				function fSubmitMe()
+				{
+					window.document.Form1.submit();
+				}
+			// -->
+		</script>
+	</head>
+	<body>
+		<form id="Form1" name="Form1" onSubmit="JavaScript:return fValidateAll();" >
+			<table id="Table1" border="0" cellpadding="20" cellspacing="0"
+				       align="center" bgcolor="#DDDDDD">
+				<tr>
+					<th id="TableHeading" colspan="2">Validation Demo</th>
+				</tr>
+				<tr>
+					<th align="right">Name :</th>
+					<td align="left">
+						<input type="text" id="txtName" name="txtName"
+						            size="40" maxlength="50"
+						            onchange="JavaScript: fValidateName();" />
+						<span id="errName" class="err"></span>
+					</td>
+				</tr>
+				<tr>
+					<th align="right">Age :</th>
+					<td align="left">
+						<input type="text" id="txtAge" name="txtAge"
+						            size="4" maxlength="2"
+						            onchange="JavaScript:fValidateAge();" />
+						<span id="errAge" class="err"></span>
+					</td>
+				</tr>
+				<tr>
+					<th align="right">Email :</th>
+					<td align="left">
+						<input type="text" id="txtEmail" name="txtEmail"
+						            size="80" maxlength="60"
+						            onchange="JavaScript:fValidateEmail();" />
+						<span id="errEmail" class="err"></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right">
+						<input type="submit" id="btnSubmit1" name="btnSubmit1"
+							        value="Submit Information"/>
+						<input type="submit" id="btnSubmit2" name="btnSubmit2"
+							        value="Submit Information Another way"/>
+						<input type="button" id="btnSubmit3" name="btnSubmit3"
+									value="Submit using JavaScript"
+									onclick="JavaScript: fSubmitMe();" />
+						<input type="reset" id="btnReset" name="btnReset"
+								    value="Reset"
+								    onClick="JavaScript: fClearAll();" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

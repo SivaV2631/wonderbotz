@@ -1,0 +1,27 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Demo of JSON</title>
+	</head>
+	<body>
+
+		<h1>Example of JSON</h1>
+
+		<script type="text/javascript">
+
+			var obj = {
+				'ID' : 10,
+				'Name' : 'First Employee',
+
+				'Work': function() {
+							alert('Employee ' + this.Name + ' is working today');
+						}
+			};
+
+			alert( 'Employee ID: ' + obj.ID + ', Name = ' + obj.Name );
+			obj.Work();
+
+		</script>
+
+	</body>
+</html>

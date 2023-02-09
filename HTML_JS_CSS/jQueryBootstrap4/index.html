@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>jQuery Form Validation</title>
+
+	<link rel="stylesheet" href="css/bootstrap.4.1.3.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/site.css">
+
+	<!-- for list of Material Icons: https://material.io/tools/icons/?style=baseline -->
+
+	<script src="js/jquery.3.3.1min.js"></script>
+	<script src="js/popper.1.14.3.min.js"></script>
+	<script src="js/bootstrap.4.1.3.min.js"></script>
+	<script src="js/validate.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1>Registration Form</h1>
+
+		<form id="Form1" name="Form1" method="GET" class="needs-validation" novalidate>
+			<div class="form-group">
+				<label for="tbName">Name</label>
+				<input id="tbName" name="tbName" type="text" class="form-control col-4" required="required"
+					maxlength="50" placeholder="enter name" />
+				<div class="invalid-feedback">
+					Please enter your name.
+      			</div>
+      			<div class="valid-feedback">
+      				Looks good!
+      			</div>
+			</div>
+			<div class="form-group">
+				<label for="tbEmail">Email</label>
+				<input id="tbEmail" name="tbEmail" type="email" class="form-control" required="required"
+					maxlength="60" />
+				<div class="invalid-feedback">
+					Please enter a valid email address
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="tbPassword">Password</label>
+				<input id="tbPassword" name="tbPassword" type="password" class="form-control col-2" required="required"
+					maxlength="20" />
+				<div class="invalid-feedback">
+					Please enter password
+				</div>
+				<span class="form-text small text-muted">
+					The password must be 8-20 characters, and must <em>not</em> contain spaces.
+                </span>
+			</div>
+			<div class="form-group">
+				<label for="tbDOB">Date of Birth</label>
+				<input id="tbDOB" name="tbDOB" type="date" class="form-control col-2" required="required"
+					maxlength="20" />
+				<div class="invalid-feedback">
+					Please enter your date of birth
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="rdoGender">Gender</label>
+				<br />
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optGender" value="M">Male
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optGender" value="F">Female
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+                <label for="ddlQualification">Highest Qualification</label>
+                <select id="ddlQualification" name="ddlQualification" required="required"
+                	class="form-control">
+                  <option value="">-- select --</option>
+                  <option value="PG">Post-Graduate</option>
+                  <option value="G">Graduate</option>
+                  <option value="UG">Under Graduate</option>
+                </select>
+                <div class="invalid-feedback">
+                	Please selected your highest qualification.
+                </div>
+			</div>
+			<hr />
+			<div class="form-group">
+				<button type="submit" class="btn btn-success btn-lg float-right">
+					<span class="material-icons">account_box</span>
+					Register Now
+				</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+
+</html>

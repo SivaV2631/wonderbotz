@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<p id="p1">hello world</p>
+		<button onclick="fOne()">click me</button>
+
+		<p id="p2">hello world</p>
+		<button onclick="fTwo()">click me</button>
+
+
+		<p id="p3">hello world</p>
+		<button onclick="fThree()">click me</button>
+
+		<script>
+
+			function fOne() {
+				document.getElementById('p1').innerHTML = 'demonstration';
+			}
+
+			function fTwo() {
+
+				// show the data (TEXT) in the paragraph
+				// let theText = document.getElementById('p2').innerText;
+				let theText = $('#p2').text();
+				alert( theText );
+
+				// change the data (TEXT) in the paragraph
+				$('#p2').text('another <b>demo</b>');
+			}
+
+			function fThree() {
+				// change the data (HTML) in the paragraph
+				$('#p3').html('another <b>demo</b>');
+			}
+
+		</script>
+
+	</body>
+</html>

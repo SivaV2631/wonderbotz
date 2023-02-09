@@ -1,0 +1,63 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Demo of DOM</title>
+	</head>
+	<body>
+		<h1>Demo of DOM (Document Object Model)</h1>
+
+		<form>
+			<input type="text" id="txtName" name="txtName"  onChange="fCheckIfEmpty('txtName')"/>
+			<input type="text" id="txtAge" name="txtAge"    onChange="fCheckIfEmpty2(this)" />
+			<input type="submit" value="Submit the data!" />
+		</form>
+
+		<script type="text/javascript">
+
+			function fCheckIfEmpty(txtboxId) {
+				if( document.getElementById(txtboxId).value == ''){
+					alert('cannot be empty');
+				}
+			}
+
+			function fCheckIfEmpty2(txtbox) {
+				if (txtbox.value == '') {
+					alert('cannot be empty');
+				}
+			}
+
+
+			function Employee(id, name) {
+				this.ID = id;
+				this.Name = name;
+
+				function Demo(message) {
+					alert('demonstration!!!!!');
+					alert(message);
+				}
+
+				this.Work = function() {
+					alert('Employee ' + this.Name + ' is working today');
+					Demo();
+					Demo('hello world');
+				};
+
+				this.Break = (x) => {
+					alert('Break is for ' + x + ' minutes!');
+					alert('Employee is fired!');
+				}
+			}
+
+			var obj = new Employee(10, 'First employee');
+
+			alert( 'Employee ID: ' + obj.ID + ', Name = ' + obj.Name );
+
+			obj.Work();
+			// obj.Demo();
+
+			obj.Break();
+			obj.Break(10);
+		</script>
+
+	</body>
+</html>
