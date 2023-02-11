@@ -1,0 +1,22 @@
+Declaration			MyClass obj;
+Instantiation			obj = new MyClass();
+Initialization			obj.ID = 10; obj.Name = "First Employee";
+
+Encapsulation
+Aggregation
+Polymorphism
+	Overload (method signature)
+	Override
+
+
+Method Signature
+YES - Name of the method
+NO  - Name of the Argument
+YES - Type of the Argument
+YES - Number of Arguments
+NO  - Position of the Argument
+YES - Argument Modifier ByVal/ByRef or ByVal/ByOut
+*NO  - Return Type of Method
+*NO  - Instance Modifier of the Method (static / non-static)
+*NO - Access Modifier of the Method (public / private / protected / internal / protected internal)
+
