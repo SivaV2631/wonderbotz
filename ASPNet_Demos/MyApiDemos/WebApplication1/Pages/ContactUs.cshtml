@@ -1,0 +1,31 @@
+﻿@page
+@model WebApplication1.Pages.ContactUsModel
+@{
+}
+
+<h1>Contact Us</h1>
+
+@{
+    for(int i = 0; i < 5; i++)
+    {
+        <p>Hello world</p>
+    }
+}
+
+<p>
+    <b><i style="color: #ff0000;">Employee Information</i></b> <br />
+    <b>First Name:</b> @this.Model.emp?.FirstName <br />
+    <b>Last Name:</b> @this.Model.emp?.LastName <br />
+</p>
+
+
+<button class="btn btn-primary" onclick="fClickMe()">
+    Click Me
+</button>
+
+<script>
+    function fClickMe(){
+        alert('hello world');
+    }
+</script>
+
