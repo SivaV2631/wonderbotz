@@ -10,8 +10,9 @@ TO CREATE THE EF MODEL
 4. Define the "DbContext" class in the "Data" folder, to define the EF Model representing the data store.
 5. Define the DbSet<T> of the Entity Model in the DbContext Class, to expose the collection of entities.
 6. In the Program.cs file, register the service to connect to the database.  This should be done before registering any of other services in the ASP.NET pipeline.
-7. Compile the Project and ensure that there are no errors or warnings.
-8. Using the Package Manager Console:
+7. Add the Database Connection String in the **appsettting.json** file. 
+8. Compile the Project and ensure that there are no errors or warnings.
+9. Using the Package Manager Console:
 
   > **add-migration <name>**  (to generate the C# code for creating the database & database schema)
 
